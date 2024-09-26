@@ -1,0 +1,12 @@
+-- Script para hacer que lluevan frutas en Blox Fruits
+
+local function spawnFruits()
+    local fruitNames = {"Blox Fruit", "Dragon Fruit", "Ice Fruit"} -- Nombres de las frutas
+    for i = 1, 20 do  -- Cambia el número para más o menos frutas
+        local fruitName = fruitNames[math.random(1, #fruitNames)] -- Seleccionar fruta aleatoria
+        game.ReplicatedStorage.Remotes.SpawnFruit:FireServer(fruitName) -- Invocar la función para generar la fruta
+        wait(0.5) -- Esperar un poco antes de crear la siguiente fruta
+    end
+end
+
+spawnFruits() -- Llamar a la función para que empiece a llover frutas
